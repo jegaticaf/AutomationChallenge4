@@ -32,6 +32,7 @@ class Cinemark():
         log_message("Start - Go to section {}".format(parameter))
         self.browser.switch_window(locator = self.browser.get_window_handles()[tabs_dict["Cinemark"]])
         self.browser.go_to(self.cinemark_url)
+        time.sleep(1)
         self.browser.click_element('//ul[@class="box-menu grid-center-content"]//a[text()="{}"]'.format(parameter))
         time.sleep(1)
         log_message("End - Go to section {}".format(parameter))
