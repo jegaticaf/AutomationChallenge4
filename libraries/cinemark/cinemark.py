@@ -21,6 +21,13 @@ class Cinemark():
         log_message("Start - Access Cinemark.pe")
         self.browser.go_to(self.cinemark_url)
         time.sleep(1)
+        cinema_selection = self.browser.find_elements('//select')
+        self.browser.click_element(cinema_selection[0])
+
+        self.browser.click_element('//option[text()="Arequipa"]')
+        self.browser.click_element(cinema_selection[1])
+
+        self.browser.click_element('//option[text()="Cinemark Lambramani"]')  
         self.browser.click_element('//button[text()="Aceptar"]')
 
         log_message("End - Access Cinemark.pe")
