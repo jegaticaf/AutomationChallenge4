@@ -139,7 +139,7 @@ class Cinemark():
                 cinema_link = self.browser.find_element(cinema).get_attribute("href")
                 self.browser.switch_window(locator = self.browser.get_window_handles()[tabs_dict["Cinema"]])
                 self.browser.go_to(cinema_link)
-                self.browser.wait_until_element_is_visible('//div[@class="grid-center-content-vertical"]', timeout=timedelta(seconds=3))
+                self.browser.wait_until_element_is_visible('//div[@class="grid-center-content-vertical"]', timeout=timedelta(seconds=1))
                 cinema_name = self.browser.find_element('//div[@class="grid-center-content-vertical"]//span').text
                 print("Checking schedule of {}".format(cinema_name))
                 movie_sections = self.browser.find_elements('//div[@class="grid-center-content"]/button')
