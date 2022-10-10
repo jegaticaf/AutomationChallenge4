@@ -21,7 +21,7 @@ class Cinemark():
         log_message("Start - Access Cinemark.pe")
         self.browser.go_to(self.cinemark_url)
         try:
-            #self.browser.wait_until_element_is_visible('//select', timeout=timedelta(seconds=1))
+            self.browser.wait_until_element_is_visible('//select', timeout=timedelta(seconds=1))
             cinema_selection = self.browser.find_elements('//select')
             self.browser.click_element(cinema_selection[0])
 
