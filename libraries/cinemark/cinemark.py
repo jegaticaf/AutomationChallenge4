@@ -77,7 +77,7 @@ class Cinemark():
                 movie_link = self.browser.find_element('xpath:.//a', parent=movie).get_attribute("href")
                 self.browser.switch_window(locator = self.browser.get_window_handles()[tabs_dict["Movie"]])
                 self.browser.go_to(movie_link)
-                #self.browser.wait_until_element_is_visible('//div[@class="row movie-trailer-content"]//h1', timeout=timedelta(seconds=1))
+                self.browser.wait_until_element_is_visible('//div[@class="row movie-trailer-content"]//h1', timeout=timedelta(seconds=1))
                 movie_title = self.browser.find_element('//div[@class="row movie-trailer-content"]//h1').text
                 movie_data = self.browser.find_elements('//div[@class="movie-details"]//li')
                 movie_rating = self.browser.find_element(movie_data[0]).text
@@ -92,7 +92,7 @@ class Cinemark():
                 movie_link = self.browser.find_element('xpath:.//a', parent=movie).get_attribute("href")
                 self.browser.switch_window(locator = self.browser.get_window_handles()[tabs_dict["Movie"]])
                 self.browser.go_to(movie_link)
-                #self.browser.wait_until_element_is_visible('//div[@class="row movie-trailer-content"]//h1', timeout=timedelta(seconds=1))
+                self.browser.wait_until_element_is_visible('//div[@class="row movie-trailer-content"]//h1', timeout=timedelta(seconds=1))
                 movie_title = self.browser.find_element('//div[@class="row movie-trailer-content"]//h1').text
                 movie_data = self.browser.find_elements('//div[@class="movie-details"]//li')
                 movie_rating = self.browser.find_element(movie_data[0]).text
